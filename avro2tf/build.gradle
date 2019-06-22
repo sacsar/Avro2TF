@@ -9,6 +9,7 @@ ext.deps = [
         "sparkCore": "org.apache.spark:spark-core_2.11:2.3.0",
         "sparkMllib": "org.apache.spark:spark-mllib_2.11:2.3.0",
         "sparkSql": "org.apache.spark:spark-sql_2.11:2.3.0",
+        "sparkTensorflowConnector": "org.tensorflow:spark-tensorflow-connector_2.11:1.13.1",
         "testng": "org.testng:testng:6.4"
     ]
 ]
@@ -28,4 +29,10 @@ dependencies {
     exclude module: 'avro-mapred'
   }
   testCompile(deps.external.testng)
+  
+  testRuntime(deps.external.sparkTensorflowConnector)
+}
+
+test {
+  useTestNG()
 }

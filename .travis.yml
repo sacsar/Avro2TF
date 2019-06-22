@@ -9,3 +9,4 @@ script: "./gradlew check --stacktrace --info"
 branches:
   only:
   - master
+  - enable_tests
